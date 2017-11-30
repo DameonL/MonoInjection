@@ -44,7 +44,7 @@ namespace MonoInjection
 		{
 			if (_injectionMode == InjectionMode.LateUpdate)
 			{
-				ProcessCalls(Time.fixedDeltaTime);
+				ProcessCalls(Time.deltaTime);
 			}
 		}
 
