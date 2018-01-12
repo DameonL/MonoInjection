@@ -75,7 +75,10 @@ namespace MonoInjection
 			var enumerator = _subscribers.GetEnumerator();
 			while (enumerator.MoveNext() != false)
 			{
-				enumerator.Current.OnUpdate(deltaTime);
+				if (!_subscribersToRemove.Contains(enumerator.Current)
+				{
+					enumerator.Current.OnUpdate(deltaTime);
+				}
 			}
 		}
 
